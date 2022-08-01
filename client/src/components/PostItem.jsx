@@ -11,7 +11,7 @@ export const PostItem = ({ post }) => {
   }
   return (
     <Link to={`/${post._id}`}>
-      <div className="w-11/12 mx-auto h-52 mt-2 rounded-sm px-2 py-1 shadow-md bg-slate-700">
+      <div className="flex flex-col w-11/12 mx-auto mt-2 rounded-sm px-2 py-1 shadow-md bg-slate-700">
         <div
           className={post.imgUrl ? 'flex rouded-sm h-80' : 'flex rounded-sm'}
         >
@@ -23,16 +23,17 @@ export const PostItem = ({ post }) => {
             />
           )}
         </div>
-        <div className="flex justify-between items-center pt-1">
-          <p className="text-gray-500 text-xs">{post.username}</p>
+        <div className="flex justify-between items-center pt-1 text-gray-300 text-xs">
+          <p>{post.username}</p>
           <Moment date={post.createdAt} format="D MMM YYYY" />
         </div>
         <h2 className="text-white text-xl">{post.title}</h2>
-        <div className="flex gap-x-3 items-center mt-2">
-          <button className="flex items-center justify-center gap-2 text-xs text-white opacity-50">
+        <p className="text-white opacity-70 text-sm my-2">{post.text}</p>
+        <div className="flex gap-x-3 items-center mt-auto">
+          <button className="flex items-center justify-center gap-2 text-xs text-gray-300">
             <AiFillEye /> <span>{post.views}</span>
           </button>
-          <button className="flex items-center justify-center gap-2 text-xs text-white opacity-50">
+          <button className="flex items-center justify-center gap-2 text-xs text-gray-400">
             <AiOutlineMessage /> <span>{post.comments?.length || 0} </span>
           </button>
         </div>

@@ -10,12 +10,12 @@ export const MainPage = () => {
   useEffect(() => {
     dispatch(getAllPosts())
   }, [dispatch])
-
-  if (!posts.length) {
-    return <div className='text-white text-center text-xl mt-5'>Loading...</div>
-  }
+  
   if (posts.length === 0) {
     return <div className='text-white text-center text-xl mt-5'>No post jet</div>
+  }
+  if (!posts.length) {
+    return <div className='text-white text-center text-xl mt-5'>Loading...</div>
   }
 
 
