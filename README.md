@@ -1,3 +1,5 @@
-# onlineshop
-### Для запуска проекта и в сервере и в клиента установить модули - npm i 
-### Затем прописать -  npm start
+# Online shop
+
+Starting
+### npm i 
+### npm start
