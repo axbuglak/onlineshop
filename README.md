@@ -1,5 +1,5 @@
 # Online shop
 
-Starting
-### npm i 
-### npm start
+## Starting
+- run `npm inst`
+- run `npm start`
