@@ -1,0 +1,13 @@
+{
+  "name": "online-shop",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "node ./server/index.js \r\n cd client \r\n npm start",
+    "inst": "cd server \r\n npm i \r\n cd ../client \r\n npm i",
+  },
+  "keywords": [],
+  "author": "Alex Buglak (axbuglak)",
+  "license": "ISC"
+}
