@@ -85,26 +85,17 @@ export const login = async (req, res) => {
 // Get Me
 export const getMe = async (req, res) => {
   try {
-    const user = await User.findById(req.userId)
-
-    if (!user) {
-      return res.json({
-        message: 'User not found'
-      })
-    }
-
+    const { userId } = req.body
+    if(!userId) return res.json({ message: 'userId is required' })
+    const user = await User.findById(userId)
+    if (!user) return res.json({ message: 'User not found' })
     const token = jwt.sign(
-      {
-        id: user._id
-      },
+      { id: user._id },
       process.env.JWT_SECRET,
       { expiresIn: '30d' }
     )
 
-    res.json({
-      user,
-      token
-    })
+    res.json({ message: 'sucessfuly', user, token })
   } catch (error) {
     res.json({ message: 'Something went wrong' })
   }
